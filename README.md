@@ -1,7 +1,19 @@
-# Здесь будет ваш проект на Реакте с авторизацией и регистрацией
+# Mesto-react
 
-Используйте ваши предыдущие наработки по проекту Mesto. Это может быть работа 11-го спринта или его улучшенная версия после 2-х последних спринтов. 
+A training project to study the React functionality on the Yandex.Practicum learning  platform.
 
-Все запросы на авторизацию, регистрацию и проверку токена должны работать через сервис `https://auth.nomoreparties.co`. Остальные запросы, не относящиеся к этой проектной работе могут быть к бэкенду из предыдущих спринтов.
+## Project description
 
-Успехов!
+This project imitates app for sharing photos by different users. You can add and delete your own photos, like photos of other users. 
+Also, you can edit your profile, including avatar.
+
+## Technologies
+
+* BEM
+* For layout used both flex and grid
+* React
+* JSX
+
+### GitHub pages link
+
+https://cherbot1.github.io/mesto-react/
