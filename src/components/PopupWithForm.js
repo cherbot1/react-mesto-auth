@@ -1,6 +1,6 @@
 import React from 'react';
 
-function PopupWithForm({name, onSubmit, onClose, isOpen, title, children, onSubmitChangeButton, buttonState}) {
+function PopupWithForm({name, onSubmit, onClose, isOpen, title, children}) {
     return (
         <section className={`popup popup-${name} ${isOpen ? 'popup_opened' : ''}`}>
             <div className={`popup__container popup-${name}__container`}>
@@ -23,7 +23,7 @@ function PopupWithForm({name, onSubmit, onClose, isOpen, title, children, onSubm
                         type="submit"
                         aria-label='Сохранить'
                         className="popup__save-button popup-edit__save-button"
-                    >{`${buttonState ? 'Сохранение...' : 'Сохранить'}`}</button>
+                    >Сохранить</button>
                 </form>
             </div>
         </section>

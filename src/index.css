@@ -58,3 +58,15 @@
 @import url(./blocks/popup-change-avatar/__input-error/popup-change-avatar__input-error.css);
 @import url(./blocks/popup-change-avatar/__form/popup-change-avatar__form.css);
 @import url(./blocks/popup/__container/popup__container.css);
+@import url(./blocks/entry/entry.css);
+@import url(./blocks/entry/__main-content/entry__main-content.css);
+@import url(./blocks/entry/__form/entry__form.css);
+@import url(./blocks/entry/__title/entry__title.css);
+@import url(./blocks/entry/__input/entry__input.css);
+@import url(./blocks/entry/__save-button/entry__save-button.css);
+@import url(./blocks/entry/__link/entry__link.css);
+@import url(./blocks/entry/__link/_hidden/entry__link_hidden.css);
+@import url(./blocks/header/__container/header__container.css);
+@import url(./blocks/header/__email/header__email.css);
+@import url(./blocks/header/__exit-button/header__exit-button.css);
+@import url(./blocks/header/__link/header__link.css);
