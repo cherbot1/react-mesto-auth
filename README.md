@@ -1,11 +1,11 @@
-# Mesto-react
+# React-mesto-auth
 
 A training project to study the React functionality on the Yandex.Practicum learning  platform.
 
 ## Project description
 
-This project imitates app for sharing photos by different users. You can add and delete your own photos, like photos of other users. 
-Also, you can edit your profile, including avatar.
+This project imitates app for sharing photos by different users. You can add and delete your own photos, like photos of other users.
+Also, you can edit your profile, including avatar. Recently was added registration and authorization functionality in training purposes.
 
 ## Technologies
 
@@ -16,4 +16,4 @@ Also, you can edit your profile, including avatar.
 
 ### GitHub pages link
 
-https://cherbot1.github.io/mesto-react/
+https://cherbot1.github.io/react-mesto-auth/
