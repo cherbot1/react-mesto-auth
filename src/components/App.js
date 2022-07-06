@@ -32,30 +32,32 @@ function App() {
 
 
     React.useEffect(() => {
-        api.getUserInfo().then((data) => {
-            setCurrentUser(data);
-        })
-            .catch((err) => {
-                console.log(err);
-            });
-
-        api.getCardsInfo().then((data) => {
-            setCards(data);
-        })
-            .catch((err) => {
-                console.log(err);
-            });
-
         tokenCheck();
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     React.useEffect(() => {
         if (loggedIn) {
             history.push('/');
+
+            api.getUserInfo().then((data) => {
+                setCurrentUser(data);
+            })
+                .catch((err) => {
+                    console.log(err);
+                });
+
+            api.getCardsInfo().then((data) => {
+                setCards(data);
+            })
+                .catch((err) => {
+                    console.log(err);
+                });
         }
+
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [loggedIn])
-
 
     function handleCardLike(card) {
         const isLiked = card.likes.some(i => i._id === currentUser._id);
@@ -155,15 +157,16 @@ function App() {
         register(password, email).then((res) => {
             if (res) {
                 setRegistered(true);
-                setIsInfoTooltipOpen(true);
                 history.push('/sign-in');
             }
         })
             .catch((err) => {
                 setRegistered(false);
-                setIsInfoTooltipOpen(true);
                 console.log(err);
             })
+            .finally(() => {
+            setIsInfoTooltipOpen(true);
+        })
     }
 
     /* Обработка входа */
@@ -177,6 +180,8 @@ function App() {
         })
             .catch((err) => {
                 setIsLoggedIn(false);
+                setRegistered(false);
+                setIsInfoTooltipOpen(true);
                 console.log(err);
             })
     }
@@ -256,6 +261,8 @@ function App() {
                        isOpen = {isInfoTooltipOpen}
                        onClose = {closeAllPopups}
                        register = {registered}
+                       okText={'Вы успешно зарегистрировались!'}
+                       notOkText={'Что-то пошло не так! Попробуйте ещё раз.'}
                    />
                </div>
            </LoggedInContext.Provider>

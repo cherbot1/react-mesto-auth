@@ -2,7 +2,7 @@ import React from 'react';
 import okImage from "../images/ok.png";
 import notOkImage from "../images/not-ok.png";
 
-export default function InfoTooltip({isOpen, onClose, register}) {
+export default function InfoTooltip({isOpen, onClose, register, okText, notOkText}) {
     return (
         <section className={`popup popup-info ${isOpen && 'popup_opened'}`}>
             <div className="popup-info__container">
@@ -20,8 +20,8 @@ export default function InfoTooltip({isOpen, onClose, register}) {
                 />
                 <p className='popup-info__text'>
                     {register
-                        ? 'Вы успешно зарегистрировались!'
-                        : 'Что-то пошло не так! Попробуйте ещё раз.'
+                        ? okText
+                        : notOkText
                     }
                 </p>
             </div>

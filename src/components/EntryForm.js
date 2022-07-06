@@ -11,7 +11,6 @@ function EntryForm({name, title, onSubmit, children, buttonText}) {
                     name={`${name}_form`}
                     className={`entry__form entry-${name}__form`}
                     onSubmit={onSubmit}
-                    noValidate
                 >
                     {children}
                     <button
