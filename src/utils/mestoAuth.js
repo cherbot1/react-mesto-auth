@@ -10,18 +10,12 @@ export const register = (password, email) => {
         body: JSON.stringify({password, email})
     })
         .then((response) => {
-            try {
-                if (response.ok){
-                    return response.json();
-                }
-            } catch(err){
-                return (err)
+            if (response.ok){
+                return response.json();
+            } else {
+                return Promise.reject(`${response.status}`);
             }
         })
-        .then((res) => {
-            return res;
-        })
-        .catch((err) => console.log(err));
 };
 
 export const authorize = (password, email) => {
@@ -34,18 +28,12 @@ export const authorize = (password, email) => {
         body: JSON.stringify({password, email})
     })
         .then((response) => {
-            try {
-                if (response.ok){
-                    return response.json();
-                }
-            } catch(err){
-                return (err)
-            }
-        })
-        .then((res) => {
-            return res;
-        })
-        .catch((err) => console.log(err));
+        if (response.ok){
+            return response.json();
+        } else {
+            return Promise.reject(`${response.status}`);
+        }
+    })
 };
 
 export const getContent = (token) => {
@@ -57,6 +45,11 @@ export const getContent = (token) => {
             'Authorization': `Bearer ${token}`,
         }
     })
-        .then(res => res.json())
-        .then(data => data)
-}
+        .then((response) => {
+            if (response.ok){
+                return response.json();
+            } else {
+                return Promise.reject(`${response.status}`);
+            }
+        })
+};
